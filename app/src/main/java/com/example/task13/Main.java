@@ -17,8 +17,8 @@ public class Main {
         two.add("green");
         two.add("brown");
         two.add("purple");
-        two.add("white");
         two.add("blue");
+        two.add("gray");
 
         HashSet<Integer> numbers = new HashSet<>();
         Random rnd = new Random();
@@ -47,9 +47,17 @@ public class Main {
 
     static<T> HashSet<T> arrayFromArray(HashSet<T> one, HashSet<T> two){
         final HashSet<T> result = new HashSet<>();
-        for (T x:one) {
-            if (two.contains(x)) {
-                result.add(x);
+        if (one.size() > two.size()) {
+            for (T x:two) {
+                if (one.contains(x)) {
+                    result.add(x);
+                }
+            }
+        } else {
+            for (T x:one) {
+                if (two.contains(x)) {
+                    result.add(x);
+                }
             }
         }
 
