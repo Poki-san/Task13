@@ -33,16 +33,14 @@ public class Main {
         System.out.println(arrayFromArray(one, two)+"\n");
 
         System.out.println("Задание 2");
-        for (Object x:numbers.toArray()) {
-            if ((Integer) x > 15 && (Integer) x%2==0) {
+        for (Integer x:numbers) {
+            int n = x % 2;
+            if (x > 15 && n==0) {
                 System.out.println("Правильное число: " + x);
             } else {
-                System.out.print(((Integer)x)/2 +" - Изначальное число: ");
-                System.out.print(x);
-                System.out.print("\n");
+                System.out.println("Деление на 2: " + ((double)x)/2);
             }
         }
-
     }
 
     static<T> HashSet<T> arrayFromArray(HashSet<T> one, HashSet<T> two){
