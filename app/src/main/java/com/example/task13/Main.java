@@ -27,6 +27,7 @@ public class Main {
         numbers.add(rnd.nextInt(100)+1);
         numbers.add(rnd.nextInt(100)+1);
         numbers.add(rnd.nextInt(100)+1);
+        numbers.add(rnd.nextInt(100)+1);
 
         System.out.println("Задание 1");
         System.out.println(arrayFromArray(one, two)+"\n");
@@ -45,13 +46,10 @@ public class Main {
     }
 
     static<T> HashSet<T> arrayFromArray(HashSet<T> one, HashSet<T> two){
-        final HashSet<T> result =new HashSet<>();
-        for (Object x:one.toArray()){
-            for (Object n:two.toArray()) {
-                if (n == x) {
-                    result.add((T) n);
-                    break;
-                }
+        final HashSet<T> result = new HashSet<>();
+        for (T x:one) {
+            if (two.contains(x)) {
+                result.add(x);
             }
         }
 
